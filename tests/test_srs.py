@@ -3,7 +3,7 @@ from datetime import date, timedelta
 from sqlalchemy.orm import Session
 
 from app.models.user import User
-from app.models.vocabulary import VocabularyCard, UserProgress
+from app.models.vocabulary import UserProgress, VocabularyCard
 from app.services.srs import get_due_cards
 
 
@@ -25,7 +25,9 @@ class TestGetDueCards:
     def test_returns_overdue_cards(self, db: Session):
         user = _make_user(db)
         card = _make_card(db)
-        p = UserProgress(user_id=user.id, card_id=card.id, due_date=date.today() - timedelta(days=1))
+        p = UserProgress(
+            user_id=user.id, card_id=card.id, due_date=date.today() - timedelta(days=1)
+        )
         db.add(p)
         db.flush()
 
@@ -36,7 +38,9 @@ class TestGetDueCards:
     def test_excludes_future_cards(self, db: Session):
         user = _make_user(db, "srsuser2")
         card = _make_card(db, "Danke")
-        p = UserProgress(user_id=user.id, card_id=card.id, due_date=date.today() + timedelta(days=3))
+        p = UserProgress(
+            user_id=user.id, card_id=card.id, due_date=date.today() + timedelta(days=3)
+        )
         db.add(p)
         db.flush()
 

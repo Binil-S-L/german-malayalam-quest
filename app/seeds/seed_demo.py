@@ -18,7 +18,9 @@ def seed_demo(db: Session) -> None:
     db.add(user)
     db.flush()
 
-    cards = db.query(VocabularyCard).filter(VocabularyCard.cefr_level.in_(["A1", "A2"])).limit(10).all()
+    cards = (
+        db.query(VocabularyCard).filter(VocabularyCard.cefr_level.in_(["A1", "A2"])).limit(10).all()
+    )
     today = date.today()
     for i, card in enumerate(cards):
         db.add(UserProgress(

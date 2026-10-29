@@ -1,13 +1,11 @@
-from datetime import datetime, date
+from datetime import date, datetime
 from zoneinfo import ZoneInfo
 
-import pytest
 from sqlalchemy.orm import Session
 
-from app.models.quest import TaskLibrary, TaskType
+from app.models.quest import RingEnum, TaskLibrary, TaskType
 from app.models.user import User
-from app.services.quest import get_or_create_daily_quest, complete_ring, DAILY_DRILL_LIMIT
-from app.models.quest import RingEnum
+from app.services.quest import complete_ring, get_or_create_daily_quest
 
 
 def _make_user(db: Session, username="testuser", level=1) -> User:

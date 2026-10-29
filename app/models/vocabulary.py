@@ -1,7 +1,7 @@
-from datetime import datetime, date
+from datetime import date, datetime
 from typing import TYPE_CHECKING
 
-from sqlalchemy import String, Integer, Float, Date, DateTime, ForeignKey, func, Text
+from sqlalchemy import Date, DateTime, Float, ForeignKey, Integer, String, Text, func
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.core.db import Base
@@ -20,7 +20,9 @@ class VocabularyCard(Base):
     cefr_level: Mapped[str] = mapped_column(String(3), nullable=False)  # A1, A2, B1 …
     topic_tag: Mapped[str | None] = mapped_column(String(60))
 
-    progress: Mapped[list["UserProgress"]] = relationship(back_populates="card", cascade="all, delete-orphan")
+    progress: Mapped[list["UserProgress"]] = relationship(
+        back_populates="card", cascade="all, delete-orphan"
+    )
 
 
 class UserProgress(Base):

@@ -3,8 +3,8 @@ from datetime import date
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
-from app.models.vocabulary import UserProgress, VocabularyCard
 from app.models.user import User
+from app.models.vocabulary import UserProgress
 
 
 def get_due_cards(db: Session, user: User, today: date | None = None) -> list[UserProgress]:

@@ -1,11 +1,11 @@
-from datetime import datetime, date
+from datetime import date, datetime
 from zoneinfo import ZoneInfo
 
-from sqlalchemy import select, func
+from sqlalchemy import func, select
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
 
-from app.models.quest import DailyQuest, QuestTask, TaskLibrary, TaskType, RingEnum
+from app.models.quest import DailyQuest, QuestTask, RingEnum, TaskLibrary, TaskType
 from app.models.user import User
 
 DAILY_DRILL_LIMIT = 15
@@ -25,8 +25,10 @@ def _today(now: datetime | None) -> date:
     return now.astimezone(TIMEZONE).date()
 
 
-def _pick_task(db: Session, task_type: TaskType, level: int, exclude_ids: list[int]) -> TaskLibrary | None:
-    """Level fallback: exact level first, then lower. Excludes last-7-day tasks when alternatives exist."""
+def _pick_task(
+    db: Session, task_type: TaskType, level: int, exclude_ids: list[int]
+) -> TaskLibrary | None:
+    """Level fallback: exact level → lower. Skips last-7-day tasks when alternatives exist."""
     for lvl in range(level, 0, -1):
         cefr = _level_to_cefr(lvl)
         q = (

@@ -1,8 +1,9 @@
 import enum
-from datetime import datetime, date
+from datetime import date, datetime
 from typing import TYPE_CHECKING
 
-from sqlalchemy import String, Integer, Boolean, Date, DateTime, ForeignKey, UniqueConstraint, func, Enum as SAEnum
+from sqlalchemy import Boolean, Date, DateTime, ForeignKey, Integer, String, UniqueConstraint, func
+from sqlalchemy import Enum as SAEnum
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.core.db import Base
@@ -11,13 +12,13 @@ if TYPE_CHECKING:
     from app.models.user import User
 
 
-class RingEnum(str, enum.Enum):
+class RingEnum(enum.StrEnum):
     drill = "drill"
     media = "media"
     action = "action"
 
 
-class TaskType(str, enum.Enum):
+class TaskType(enum.StrEnum):
     MEDIA = "MEDIA"
     ACTION = "ACTION"
 
@@ -50,7 +51,9 @@ class DailyQuest(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
 
     user: Mapped["User"] = relationship(back_populates="quests")
-    tasks: Mapped[list["QuestTask"]] = relationship(back_populates="quest", cascade="all, delete-orphan")
+    tasks: Mapped[list["QuestTask"]] = relationship(
+        back_populates="quest", cascade="all, delete-orphan"
+    )
 
 
 class QuestTask(Base):

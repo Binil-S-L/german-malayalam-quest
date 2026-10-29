@@ -4,7 +4,7 @@ from sqlalchemy.orm import Session
 
 from app.core.db import get_db
 from app.models.user import User
-from app.schemas.quest import DailyQuestOut, CompleteRingRequest, CompleteRingResponse
+from app.schemas.quest import CompleteRingRequest, CompleteRingResponse, DailyQuestOut
 from app.services import quest as quest_svc
 
 router = APIRouter()
@@ -33,7 +33,7 @@ def complete_ring(user_id: int, body: CompleteRingRequest, db: Session = Depends
 
 
 def _quest_with_tasks(quest):
-    from app.schemas.quest import TaskOut, DailyQuestOut
+    from app.schemas.quest import DailyQuestOut, TaskOut
     tasks = []
     for qt in quest.tasks:
         t = qt.task

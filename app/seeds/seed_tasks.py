@@ -5,7 +5,7 @@ from pathlib import Path
 
 from sqlalchemy.orm import Session
 
-from app.core.db import engine, SessionLocal
+from app.core.db import SessionLocal
 from app.models.quest import TaskLibrary, TaskType
 from app.models.vocabulary import VocabularyCard
 
