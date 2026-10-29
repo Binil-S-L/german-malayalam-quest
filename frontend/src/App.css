@@ -1,0 +1,347 @@
+/* ── Layout ─────────────────────────────────────── */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+/* ── Header ─────────────────────────────────────── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+}
+.header-title {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--accent);
+}
+.xp-badge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(240,230,140,0.12);
+  border: 1px solid rgba(240,230,140,0.3);
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--xp);
+}
+.xp-badge span { font-size: 15px; }
+
+/* ── Screen container ───────────────────────────── */
+.screen {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+}
+
+/* ── Section heading ────────────────────────────── */
+.section-title {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 2px;
+}
+
+/* ── Ring card ──────────────────────────────────── */
+.ring-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: border-color 0.2s;
+}
+.ring-card.done {
+  border-color: var(--green);
+  opacity: 0.75;
+}
+.ring-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+.ring-icon.drill  { background: rgba(88,166,255,0.15); }
+.ring-icon.media  { background: rgba(188,140,255,0.15); }
+.ring-icon.action { background: rgba(240,136,62,0.15); }
+
+.ring-info { flex: 1; min-width: 0; }
+.ring-name {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+.ring-sub {
+  font-size: 12px;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ring-btn {
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.1s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.ring-btn:active { transform: scale(0.96); }
+.ring-btn.start-drill  { background: var(--blue);   color: #000; }
+.ring-btn.start-media  { background: var(--purple); color: #000; }
+.ring-btn.start-action { background: var(--accent); color: #000; }
+.ring-btn.done-btn     { background: var(--green);  color: #000; }
+.ring-btn:disabled     { opacity: 0.4; cursor: default; }
+
+/* ── All-complete banner ────────────────────────── */
+.complete-banner {
+  background: linear-gradient(135deg, rgba(63,185,80,0.2), rgba(88,166,255,0.2));
+  border: 1px solid var(--green);
+  border-radius: var(--radius);
+  padding: 20px;
+  text-align: center;
+}
+.complete-banner .big { font-size: 36px; margin-bottom: 6px; }
+.complete-banner h2   { font-size: 18px; font-weight: 700; color: var(--green); }
+.complete-banner p    { font-size: 13px; color: var(--muted); margin-top: 4px; }
+
+/* ── Drill screen ───────────────────────────────── */
+.drill-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+.back-btn {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 13px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+.back-btn:hover { border-color: var(--muted); }
+
+.drill-progress {
+  font-size: 12px;
+  color: var(--muted);
+  margin-left: auto;
+}
+
+/* Flashcard */
+.flashcard-wrap {
+  perspective: 1000px;
+  cursor: pointer;
+  user-select: none;
+}
+.flashcard {
+  position: relative;
+  width: 100%;
+  min-height: 220px;
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease;
+  border-radius: var(--radius);
+}
+.flashcard.flipped { transform: rotateY(180deg); }
+
+.card-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  gap: 8px;
+  border: 1px solid var(--border);
+}
+.card-face.front { background: var(--surface); }
+.card-face.back  { background: #1a2030; transform: rotateY(180deg); }
+
+.card-de {
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--blue);
+  text-align: center;
+}
+.card-hint {
+  font-size: 12px;
+  color: var(--muted);
+}
+.card-ml {
+  font-size: 30px;
+  color: var(--text);
+  text-align: center;
+  line-height: 1.4;
+}
+.card-example {
+  font-size: 13px;
+  color: var(--muted);
+  font-style: italic;
+  text-align: center;
+}
+
+.drill-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 4px;
+}
+.drill-actions button {
+  flex: 1;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.1s;
+}
+.drill-actions button:active { transform: scale(0.97); }
+.btn-again { background: rgba(248,81,73,0.2); color: var(--red); border: 1px solid var(--red) !important; }
+.btn-good  { background: rgba(63,185,80,0.2);  color: var(--green); border: 1px solid var(--green) !important; }
+.drill-actions button:disabled { opacity: 0.3; cursor: default; }
+
+.drill-done {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
+}
+.drill-done .big   { font-size: 48px; }
+.drill-done h2     { font-size: 22px; font-weight: 700; color: var(--green); }
+.drill-done p      { font-size: 14px; color: var(--muted); }
+.drill-done button {
+  margin-top: 8px;
+  background: var(--green);
+  color: #000;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 28px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* ── Task screen ────────────────────────────────── */
+.task-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.task-type-tag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 4px;
+  align-self: flex-start;
+}
+.task-type-tag.media  { background: rgba(188,140,255,0.2); color: var(--purple); }
+.task-type-tag.action { background: rgba(240,136,62,0.2);  color: var(--accent); }
+
+.task-title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.task-desc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.task-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--blue);
+  font-size: 13px;
+  text-decoration: none;
+}
+.task-link:hover { text-decoration: underline; }
+.task-duration {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.task-done-btn {
+  margin-top: 8px;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: var(--green);
+  color: #000;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+.task-done-btn:disabled { opacity: 0.4; cursor: default; }
+.task-done-btn:not(:disabled):active { opacity: 0.8; }
+
+/* ── Loading / Error ────────────────────────────── */
+.center-msg {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.err-icon { font-size: 32px; }
+.retry-btn {
+  margin-top: 4px;
+  background: var(--accent);
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
