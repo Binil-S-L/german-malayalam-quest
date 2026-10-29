@@ -1,0 +1,107 @@
+[
+  {
+    "german_word": "Hallo",
+    "malayalam_translation": "ഹലോ",
+    "example_sentence": "Hallo, wie geht es dir?",
+    "cefr_level": "A1",
+    "topic_tag": "greetings"
+  },
+  {
+    "german_word": "Danke",
+    "malayalam_translation": "നന്ദി",
+    "example_sentence": "Danke sehr!",
+    "cefr_level": "A1",
+    "topic_tag": "greetings"
+  },
+  {
+    "german_word": "Bitte",
+    "malayalam_translation": "ദയവായി / സ്വാഗതം",
+    "example_sentence": "Einen Kaffee, bitte.",
+    "cefr_level": "A1",
+    "topic_tag": "greetings"
+  },
+  {
+    "german_word": "Entschuldigung",
+    "malayalam_translation": "ക്ഷമിക്കണം",
+    "example_sentence": "Entschuldigung, wo ist der Bahnhof?",
+    "cefr_level": "A1",
+    "topic_tag": "greetings"
+  },
+  {
+    "german_word": "Wasser",
+    "malayalam_translation": "വെള്ളം",
+    "example_sentence": "Ich möchte ein Glas Wasser.",
+    "cefr_level": "A1",
+    "topic_tag": "food"
+  },
+  {
+    "german_word": "Brot",
+    "malayalam_translation": "റൊട്ടി",
+    "example_sentence": "Ich kaufe Brot beim Bäcker.",
+    "cefr_level": "A1",
+    "topic_tag": "food"
+  },
+  {
+    "german_word": "Haus",
+    "malayalam_translation": "വീട്",
+    "example_sentence": "Mein Haus ist groß.",
+    "cefr_level": "A1",
+    "topic_tag": "home"
+  },
+  {
+    "german_word": "Arbeit",
+    "malayalam_translation": "ജോലി",
+    "example_sentence": "Ich gehe zur Arbeit.",
+    "cefr_level": "A1",
+    "topic_tag": "daily-life"
+  },
+  {
+    "german_word": "Bahnhof",
+    "malayalam_translation": "തീവണ്ടി സ്റ്റേഷൻ",
+    "example_sentence": "Der Bahnhof ist nicht weit.",
+    "cefr_level": "A2",
+    "topic_tag": "transport"
+  },
+  {
+    "german_word": "Einkaufen",
+    "malayalam_translation": "ഷോപ്പിംഗ്",
+    "example_sentence": "Ich gehe einkaufen.",
+    "cefr_level": "A2",
+    "topic_tag": "daily-life"
+  },
+  {
+    "german_word": "Gesundheit",
+    "malayalam_translation": "ആരോഗ്യം",
+    "example_sentence": "Gesundheit ist wichtig.",
+    "cefr_level": "A2",
+    "topic_tag": "health"
+  },
+  {
+    "german_word": "Wohnung",
+    "malayalam_translation": "അപ്പാർട്ട്മെന്റ്",
+    "example_sentence": "Ich suche eine neue Wohnung.",
+    "cefr_level": "A2",
+    "topic_tag": "home"
+  },
+  {
+    "german_word": "Erfahrung",
+    "malayalam_translation": "അനുഭവം",
+    "example_sentence": "Ich habe viel Erfahrung in meinem Beruf.",
+    "cefr_level": "B1",
+    "topic_tag": "work"
+  },
+  {
+    "german_word": "Entscheidung",
+    "malayalam_translation": "തീരുമാനം",
+    "example_sentence": "Das war eine schwierige Entscheidung.",
+    "cefr_level": "B1",
+    "topic_tag": "abstract"
+  },
+  {
+    "german_word": "Möglichkeit",
+    "malayalam_translation": "സാധ്യത",
+    "example_sentence": "Es gibt keine Möglichkeit zurückzugehen.",
+    "cefr_level": "B1",
+    "topic_tag": "abstract"
+  }
+]

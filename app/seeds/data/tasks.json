@@ -1,0 +1,98 @@
+[
+  {
+    "task_type": "MEDIA",
+    "title": "Easy German – Slow German #1",
+    "description": "Listen to a slow, clearly-spoken German podcast episode for A1 learners.",
+    "url": "https://www.easygerman.org/podcast",
+    "cefr_level": "A1",
+    "duration_minutes": 10
+  },
+  {
+    "task_type": "MEDIA",
+    "title": "Deutsche Welle – Top-Thema A1",
+    "description": "Read a short A1 news article from Deutsche Welle and answer comprehension questions.",
+    "url": "https://learngerman.dw.com/en/top-thema/s-111365",
+    "cefr_level": "A1",
+    "duration_minutes": 15
+  },
+  {
+    "task_type": "MEDIA",
+    "title": "Deutsch lernen mit Bildern – A2 Video",
+    "description": "Watch a short picture-based vocabulary video at A2 level.",
+    "url": "https://www.youtube.com/@DeutschMitYasmin",
+    "cefr_level": "A2",
+    "duration_minutes": 12
+  },
+  {
+    "task_type": "MEDIA",
+    "title": "Deutsche Welle – Top-Thema A2",
+    "description": "Read and listen to a short A2-level news story on Deutsche Welle.",
+    "url": "https://learngerman.dw.com/en/top-thema/s-111365",
+    "cefr_level": "A2",
+    "duration_minutes": 15
+  },
+  {
+    "task_type": "MEDIA",
+    "title": "Easy German Podcast – B1 Episode",
+    "description": "Listen to a full-speed Easy German conversation episode with transcript.",
+    "url": "https://www.easygerman.org/podcast",
+    "cefr_level": "B1",
+    "duration_minutes": 20
+  },
+  {
+    "task_type": "MEDIA",
+    "title": "Slow German Podcast by Annik Rubens – B1",
+    "description": "A slow monologue podcast about everyday German topics at B1 pace.",
+    "url": "https://slowgerman.com",
+    "cefr_level": "B1",
+    "duration_minutes": 15
+  },
+  {
+    "task_type": "ACTION",
+    "title": "Label 5 items at home in German",
+    "description": "Write the German word for 5 household objects on sticky notes and place them on the objects.",
+    "url": null,
+    "cefr_level": "A1",
+    "duration_minutes": 10
+  },
+  {
+    "task_type": "ACTION",
+    "title": "Order a coffee in German",
+    "description": "Find a café and place your order entirely in German: 'Einen Kaffee bitte.'",
+    "url": null,
+    "cefr_level": "A1",
+    "duration_minutes": 5
+  },
+  {
+    "task_type": "ACTION",
+    "title": "Ask for directions in German",
+    "description": "Ask someone (or use Google Maps voice in German) for directions to a nearby place.",
+    "url": null,
+    "cefr_level": "A2",
+    "duration_minutes": 10
+  },
+  {
+    "task_type": "ACTION",
+    "title": "Write a 3-sentence diary entry in German",
+    "description": "Describe your day in 3 German sentences. Focus on past tense: 'Heute habe ich...'",
+    "url": null,
+    "cefr_level": "A2",
+    "duration_minutes": 10
+  },
+  {
+    "task_type": "ACTION",
+    "title": "Send a WhatsApp message entirely in German",
+    "description": "Message a friend or language partner in German. At least 5 sentences.",
+    "url": null,
+    "cefr_level": "B1",
+    "duration_minutes": 10
+  },
+  {
+    "task_type": "ACTION",
+    "title": "Leave a Google review in German",
+    "description": "Write a short review for a restaurant, shop, or place you visited — all in German.",
+    "url": null,
+    "cefr_level": "B1",
+    "duration_minutes": 10
+  }
+]
