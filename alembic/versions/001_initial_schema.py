@@ -51,14 +51,14 @@ def upgrade() -> None:
     )
 
     task_type_enum = sa.Enum("MEDIA", "ACTION", name="tasktype")
-    task_type_enum.create(op.get_bind())
+    task_type_enum.create(op.get_bind(), checkfirst=True)
     ring_enum = sa.Enum("drill", "media", "action", name="ringenum")
-    ring_enum.create(op.get_bind())
+    ring_enum.create(op.get_bind(), checkfirst=True)
 
     op.create_table(
         "task_library",
         sa.Column("id", sa.Integer(), primary_key=True),
-        sa.Column("task_type", sa.Enum("MEDIA", "ACTION", name="tasktype"), nullable=False),
+        sa.Column("task_type", sa.Enum("MEDIA", "ACTION", name="tasktype", create_type=False), nullable=False),
         sa.Column("title", sa.String(200), nullable=False),
         sa.Column("description", sa.String(500), nullable=False),
         sa.Column("url", sa.String(500)),
@@ -84,7 +84,7 @@ def upgrade() -> None:
         sa.Column("id", sa.Integer(), primary_key=True),
         sa.Column("quest_id", sa.Integer(), sa.ForeignKey("daily_quests.id"), nullable=False),
         sa.Column("task_id", sa.Integer(), sa.ForeignKey("task_library.id"), nullable=False),
-        sa.Column("ring", sa.Enum("drill", "media", "action", name="ringenum"), nullable=False),
+        sa.Column("ring", sa.Enum("drill", "media", "action", name="ringenum", create_type=False), nullable=False),
     )
 
 

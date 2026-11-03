@@ -6,6 +6,7 @@ from pathlib import Path
 from sqlalchemy.orm import Session
 
 from app.core.db import SessionLocal
+import app.models  # noqa: F401 — ensures all mappers are registered before queries
 from app.models.quest import TaskLibrary, TaskType
 from app.models.vocabulary import VocabularyCard
 
